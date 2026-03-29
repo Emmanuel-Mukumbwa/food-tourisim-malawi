@@ -87,7 +87,7 @@ export default function DestinationsPage() {
     ? destinations.filter(d => d.category === categoryFilter)
     : destinations;
 
-  const categoryLabels = {
+  const categoryLabels: Record<string, string> = {
     cooking: "Cooking Class",
     market: "Market Tour",
     festival: "Food Festival",
