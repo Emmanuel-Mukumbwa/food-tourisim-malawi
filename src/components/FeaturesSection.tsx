@@ -7,7 +7,8 @@ export default function FeaturesSection() {
   return (
     <>
       {/* Culinary Experiences */}
-      <h2 className="text-center mb-4">Culinary Experiences</h2>
+      <h2 className="text-center mb-4" style={{ color: "#212529" }}>
+        Culinary Experiences</h2>
       <Row className="g-4 mb-5">
         <Col md={4}>
           <Card className="h-100 shadow-sm border-0 text-center">
@@ -60,7 +61,8 @@ export default function FeaturesSection() {
       </Row>
 
       {/* Travel Attractions */}
-      <h2 className="text-center mb-4">Must‑See Attractions</h2>
+      <h2 className="text-center mb-4" style={{ color: "#212529" }}>
+        Must‑See Attractions</h2>
       <Row className="g-4">
         <Col md={4}>
           <Card className="h-100 shadow-sm border-0 text-center">
