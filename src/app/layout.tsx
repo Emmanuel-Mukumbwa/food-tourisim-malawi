@@ -19,8 +19,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Food Tourism Malawi",
-  description: "Discover Malawi's rich food culture and culinary experiences.",
+  title: "Malawi Food & Travel",
+  description: "Discover Malawi's rich culinary traditions and breathtaking travel destinations.",
 };
 
 export default function RootLayout({
