@@ -20,8 +20,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className="container d-flex justify-content-between align-items-center">
         <Link href="/" className={styles.logo} onClick={closeMenu}>
-          <span>Food</span>
-          <span>Tourism</span> Malawi
+          <span>Malawi</span> Food & Travel
         </Link>
 
         <button
