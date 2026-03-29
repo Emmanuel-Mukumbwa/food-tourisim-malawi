@@ -8,9 +8,9 @@ export default function Hero() {
         <div className={styles.overlay} />
       </div>
       <div className={styles.content}>
-        <h1 className={styles.title}>Welcome to Food Tourism Malawi</h1>
+        <h1 className={styles.title}>Welcome to Malawi Food & Travel</h1>
         <p className={styles.subtitle}>
-          Explore the flavors, markets, and traditions that make Malawi's cuisine unique.
+          Explore culinary delights, scenic landscapes, and cultural treasures across Malawi.
         </p>
         <Button
           variant="success"
