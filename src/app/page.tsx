@@ -6,6 +6,7 @@ import itineraries from "@/data/itineraries";
 import Image from "next/image";
 import Link from "next/link";
 import ItineraryCard from "@/components/ItineraryCard";
+import styles from "./Home.module.css";
 
 type GalleryRowProps = {
   items: GalleryItem[];
@@ -17,13 +18,7 @@ function GalleryRow({ items }: GalleryRowProps) {
       {items.map((g, i) => (
         <div key={`${g.src}-${i}`} className="col">
           <Link href="/gallery" className="text-decoration-none">
-            <div
-              className="position-relative overflow-hidden rounded-4 shadow-sm bg-light"
-              style={{
-                aspectRatio: "4 / 3",
-                minHeight: "180px",
-              }}
-            >
+            <div className={styles.galleryTile}>
               <Image
                 src={g.src}
                 alt={g.caption || ""}
@@ -55,12 +50,18 @@ export default function Home() {
       <Hero />
 
       <Container className="py-4">
-        <FeaturesSection />
+        <div className={styles.sectionShell}>
+          <FeaturesSection />
+        </div>
 
-        <section className="my-5">
-          <h3 className="mb-4 text-center text-dark">
-            Experience Malawi – Gallery Highlights
-          </h3>
+        <section className={`${styles.sectionShell} my-5`}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.eyebrow}>Visual highlights</span>
+            <h3 className={styles.sectionTitle}>Experience Malawi – Gallery Highlights</h3>
+            <p className={styles.sectionLead}>
+              A quick look at the moments that shape the destination, from outdoor activity to local food.
+            </p>
+          </div>
 
           <div className="mb-4">
             <GalleryRow items={activityImages} />
@@ -71,14 +72,21 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-4">
-            <Link href="/gallery" className="btn btn-outline-success px-4">
+            <Link href="/gallery" className={styles.outlineButton}>
               View Full Gallery
             </Link>
           </div>
         </section>
 
-        <section className="my-5">
-          <h3 className="mb-4 text-center text-dark">Featured Itineraries</h3>
+        <section className={`${styles.sectionShell} my-5`}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.eyebrow}>Plan your trip</span>
+            <h3 className={styles.sectionTitle}>Featured Itineraries</h3>
+            <p className={styles.sectionLead}>
+              Hand-picked routes that combine food, scenery, and meaningful experiences.
+            </p>
+          </div>
+
           <div className="row g-4">
             {itineraries.slice(0, 3).map((it: any) => (
               <div key={it.slug} className="col-12 col-md-4">
@@ -86,8 +94,9 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div className="text-center mt-3">
-            <Link href="/itineraries" className="btn btn-outline-success">
+
+          <div className="text-center mt-4">
+            <Link href="/itineraries" className={styles.outlineButton}>
               View All Itineraries
             </Link>
           </div>
