@@ -1,0 +1,138 @@
+.pageShell {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.25rem, 2.8vw, 2rem);
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at top left, rgba(210, 105, 30, 0.14) 0%, rgba(210, 105, 30, 0.05) 28%, transparent 58%),
+    radial-gradient(circle at right center, rgba(47, 111, 159, 0.1) 0%, rgba(47, 111, 159, 0.035) 28%, transparent 58%),
+    linear-gradient(180deg, #fffaf5 0%, #f7fbff 100%);
+  border: 1px solid rgba(31, 45, 42, 0.08);
+  box-shadow: 0 18px 50px rgba(31, 45, 42, 0.06);
+}
+
+.pageShell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.pageHeader {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  margin-bottom: 0.6rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(210, 105, 30, 0.1);
+  color: #8b5a2b;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: #1f2d2a;
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.lead {
+  max-width: 42rem;
+  margin: 0.65rem auto 0;
+  color: rgba(31, 45, 42, 0.72);
+  line-height: 1.7;
+}
+
+.filterBar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.4rem;
+}
+
+.filterBadge {
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+}
+
+.clearLink {
+  display: inline-flex;
+  align-items: center;
+  color: #2f6f9f;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.clearLink:hover {
+  color: #245f89;
+  text-decoration: underline;
+}
+
+.destCard {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(31, 45, 42, 0.08) !important;
+  border-radius: 1.5rem !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  box-shadow: 0 16px 34px rgba(31, 45, 42, 0.08);
+  backdrop-filter: blur(10px);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.destCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 42px rgba(31, 45, 42, 0.12);
+}
+
+.cardImage {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  min-height: 220px;
+  background: #e9efe8;
+}
+
+.cardBody {
+  padding: 1rem 1rem 1.15rem;
+}
+
+.cardTitle {
+  color: #1f2d2a;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+
+.cardSubtitle {
+  margin-bottom: 0.65rem;
+  color: rgba(31, 45, 42, 0.62);
+  font-size: 0.9rem;
+}
+
+.cardText {
+  color: rgba(31, 45, 42, 0.74);
+  line-height: 1.65;
+}
+
+.categoryBadge {
+  margin-top: 0.25rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+}
