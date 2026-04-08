@@ -1,0 +1,40 @@
+.imgCrop {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.imgCropSmall {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+}
+
+.lightboxImage {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+}
+
+.heroImage {
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+}
+
+.imgThumb {
+  position: relative;
+  width: 120px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.modalBodyMin {
+  min-height: 300px;
+}
+
+.lightboxCloseBtn {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
