@@ -1,4 +1,4 @@
-//src/app/itineraries/[slug]/page.tsx
+// src/app/itineraries/[slug]/page.tsx
 import itineraries from "@/data/itineraries";
 import Image from "next/image";
 import {
@@ -6,9 +6,12 @@ import {
   Row,
   Col,
   Badge,
-  Accordion,
   Button,
 } from "react-bootstrap";
+import Accordion from "react-bootstrap/Accordion";
+import AccordionItem from "react-bootstrap/AccordionItem";
+import AccordionHeader from "react-bootstrap/AccordionHeader";
+import AccordionBody from "react-bootstrap/AccordionBody";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import styles from "@/app/itineraries/[slug]/ItineraryDetail.module.css";
@@ -17,12 +20,13 @@ export async function generateStaticParams() {
   return itineraries.map((it: any) => ({ slug: it.slug }));
 }
 
-export default function ItineraryDetail({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const it = itineraries.find((i: any) => i.slug === params.slug);
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export default async function ItineraryDetail({ params }: PageProps) {
+  const { slug } = await params;
+  const it = itineraries.find((i: any) => i.slug === slug);
 
   if (!it) notFound();
 
@@ -33,6 +37,7 @@ export default function ItineraryDetail({
           ← Back to itineraries
         </Link>
 
+        {/* HERO */}
         <div className={styles.heroImage}>
           <Image
             src={it.mainImage}
@@ -56,6 +61,7 @@ export default function ItineraryDetail({
         </div>
 
         <Row className="g-4 mt-1">
+          {/* MAIN CONTENT */}
           <Col md={8}>
             <div className={styles.contentCard}>
               <h2 className={styles.sectionTitle}>Overview</h2>
@@ -69,16 +75,19 @@ export default function ItineraryDetail({
               </ul>
 
               <h5 className={styles.subTitle}>Day by day</h5>
+
               <Accordion className={styles.accordionShell}>
                 {it.itineraryDays.map((d: any, idx: number) => (
-                  <Accordion.Item eventKey={String(idx)} key={idx}>
-                    <Accordion.Header>
+                  <AccordionItem eventKey={String(idx)} key={idx}>
+                    <AccordionHeader>
                       Day {d.day}: {d.title}
-                    </Accordion.Header>
-                    <Accordion.Body>
+                    </AccordionHeader>
+
+                    <AccordionBody>
                       <p className="mb-2">
                         <strong>Activities:</strong>
                       </p>
+
                       <ul className={styles.list}>
                         {d.activities.map((a: string, i: number) => (
                           <li key={i}>{a}</li>
@@ -89,7 +98,7 @@ export default function ItineraryDetail({
                         <strong>Meals:</strong> {d.meals.join(", ")}
                       </p>
 
-                      {d.images && d.images.length > 0 && (
+                      {d.images?.length > 0 && (
                         <div className={styles.thumbRow}>
                           {d.images.map((img: string, i: number) => (
                             <div key={i} className={styles.imgThumb}>
@@ -104,13 +113,14 @@ export default function ItineraryDetail({
                           ))}
                         </div>
                       )}
-                    </Accordion.Body>
-                  </Accordion.Item>
+                    </AccordionBody>
+                  </AccordionItem>
                 ))}
               </Accordion>
             </div>
           </Col>
 
+          {/* SIDEBAR */}
           <Col md={4}>
             <aside className={styles.sidebarCard}>
               <h5 className={styles.sidebarTitle}>Pricing</h5>
