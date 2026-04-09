@@ -15,7 +15,7 @@
   text-decoration: none;
   display: inline-flex;
   gap: 0.25rem;
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-playfair), serif; 
 }
 
 .logo span:first-child {
