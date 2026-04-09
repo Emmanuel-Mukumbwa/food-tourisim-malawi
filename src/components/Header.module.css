@@ -9,7 +9,6 @@
   top: 0;
   z-index: 1000;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
-  transition: all 0.2s ease;
 }
 
 .logo {
@@ -58,7 +57,6 @@
   border-bottom-color: #d2691e;
 }
 
-/* Active link styling */
 .navLink.active {
   color: #d2691e;
   border-bottom-color: #d2691e;
@@ -131,10 +129,6 @@
   .navLink {
     font-size: 1.35rem;
     font-weight: 600;
-  }
-
-  .navLink:hover {
-    border-bottom-width: 3px;
   }
 }
 
