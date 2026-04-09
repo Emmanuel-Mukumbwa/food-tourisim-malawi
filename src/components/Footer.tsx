@@ -4,7 +4,9 @@ export default function Footer() {
       <div className="container">
         <div className="row gy-3">
           <div className="col-md-6 text-center text-md-start">
-            <h5 className="mb-2 text-success">Malawi Food & Travel</h5>
+            <h5 className="mb-2" style={{ color: "#d2691e" }}>
+              Malawi Food & Travel
+            </h5>
             <p className="small text-white-50 mb-0">
               Discover authentic culinary experiences and breathtaking destinations across Malawi.
             </p>
