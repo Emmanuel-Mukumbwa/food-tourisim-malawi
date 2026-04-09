@@ -51,5 +51,5 @@ export default function ItineraryCard({ itinerary }: Props) {
         </div>
       </Card.Body>
     </Card>
-  );
+  ); 
 }
