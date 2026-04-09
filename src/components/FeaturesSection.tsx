@@ -107,6 +107,9 @@ export default function FeaturesSection() {
         ))}
       </Row>
 
+      {/* Gradient separator */}
+      <div className={styles.gradientSeparator} />
+
       <div className={styles.sectionHeader}>
         <h2 className={styles.sectionTitle}>Must-See Attractions</h2>
         <p className={styles.sectionLead}>

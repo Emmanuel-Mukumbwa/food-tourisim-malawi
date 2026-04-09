@@ -150,6 +150,17 @@
   color: #245f89;
 }
 
+/* Gradient separator between sections */
+.gradientSeparator {
+  margin: 2rem 0 1.5rem;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d2691e, #2f6f9f, transparent);
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.6;
+}
+
 @media (max-width: 768px) {
   .sectionShell {
     padding: 1.25rem;
@@ -162,5 +173,10 @@
 
   .cardBody {
     padding: 1.25rem 1rem;
+  }
+
+  .gradientSeparator {
+    margin: 1.5rem 0 1rem;
+    width: 90%;
   }
 }
