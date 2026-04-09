@@ -60,3 +60,14 @@ h1, h2, h3, h4, h5, h6 {
 .hover\:-translate-y-1:hover {
   transform: translateY(-0.25rem);
 }
+
+/* Sticky footer */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
