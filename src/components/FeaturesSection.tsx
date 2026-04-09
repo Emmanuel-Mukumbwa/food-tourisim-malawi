@@ -9,7 +9,6 @@ import {
   FaLandmark,
   FaUmbrellaBeach,
 } from "react-icons/fa";
-import Link from "next/link";
 import styles from "./FeaturesSection.module.css";
 
 const culinaryFeatures = [
@@ -76,7 +75,6 @@ function FeatureCard({
         <Card.Text className={styles.cardText}>{text}</Card.Text>
 
         <Button
-          as={Link}
           href={href}
           variant="light"
           size="sm"
@@ -125,9 +123,9 @@ export default function FeaturesSection() {
       </Row>
 
       <div className="text-center mt-5">
-        <Link href="/destinations" className={styles.ctaButton}>
+        <Button href="/destinations" className={styles.ctaButton}>
           View All Destinations
-        </Link>
+        </Button>
       </div>
     </section>
   );
