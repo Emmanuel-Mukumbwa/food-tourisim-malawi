@@ -24,9 +24,10 @@ export default function Header() {
         </Link>
 
         <button
-          className={styles.hamburger}
+          className={`${styles.hamburger} ${isOpen ? styles.active : ""}`}
           onClick={toggleMenu}
           aria-label="Toggle navigation"
+          aria-expanded={isOpen}
         >
           <span></span>
           <span></span>
