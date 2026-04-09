@@ -128,24 +128,26 @@
   color: #245f89 !important;
 }
 
-.ctaButton {
+.outlineButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0.85rem 1.4rem;
   border-radius: 999px;
-  background: #d2691e;
-  color: #fff;
+  border: 1px solid rgba(47, 111, 159, 0.28);
+  color: #2f6f9f;
+  background: rgba(255, 255, 255, 0.72);
   text-decoration: none;
   font-weight: 700;
-  box-shadow: 0 14px 28px rgba(210, 105, 30, 0.18);
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 12px 24px rgba(31, 45, 42, 0.06);
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
-.ctaButton:hover {
+.outlineButton:hover {
   transform: translateY(-2px);
-  background: #b85c1a;
-  color: #fff;
+  background: rgba(47, 111, 159, 0.08);
+  border-color: rgba(47, 111, 159, 0.5);
+  color: #245f89;
 }
 
 @media (max-width: 768px) {
