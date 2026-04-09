@@ -35,7 +35,6 @@ export default function Hero() {
       <div className={styles.orbThree} />
 
       <div className={styles.inner}>
-        {/* Left column: text + buttons */}
         <div className={styles.copy}>
           <span className={styles.eyebrow}>Malawi awaits</span>
           <h1 className={styles.title}>
@@ -45,17 +44,27 @@ export default function Hero() {
           <p className={styles.subtitle}>
             From lakeside meals to mountain paths – real experiences, captured in moments you can plan.
           </p>
+
           <div className={styles.actions}>
-            <Button variant="light" size="lg" href="/destinations" className={styles.primaryButton}>
+            <Button
+              variant="light"
+              size="lg"
+              href="/destinations"
+              className={styles.primaryButton}
+            >
               Discover Destinations
             </Button>
-            <Button variant="light" size="lg" href="/gallery" className={styles.secondaryButton}>
+            <Button
+              variant="light"
+              size="lg"
+              href="/gallery"
+              className={styles.secondaryButton}
+            >
               View Gallery
             </Button>
           </div>
         </div>
 
-        {/* Right column: image collage */}
         <div className={styles.visual}>
           <div className={styles.mosaic}>
             {collageItems.map(({ item, className }, index) => (
@@ -75,7 +84,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Meta info row – placed after the collage in DOM, but positioned in left column on desktop */}
         <div className={styles.metaRow}>
           <div className={styles.metaItem}>
             <span className={styles.metaValue}>Authentic moments</span>
