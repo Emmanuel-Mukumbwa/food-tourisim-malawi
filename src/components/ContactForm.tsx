@@ -64,68 +64,75 @@ export default function ContactForm({
   };
 
   const formContent = (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3">
-        <Form.Label>Name *</Form.Label>
-        <Form.Control
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-      </Form.Group>
+    <div style={{ color: "#212529" }}>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
+          <Form.Label style={{ fontWeight: 500 }}>Name *</Form.Label>
+          <Form.Control
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            style={{ color: "#212529" }}
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3">
-        <Form.Label>Email *</Form.Label>
-        <Form.Control
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-      </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label style={{ fontWeight: 500 }}>Email *</Form.Label>
+          <Form.Control
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            style={{ color: "#212529" }}
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3">
-        <Form.Label>Phone (optional)</Form.Label>
-        <Form.Control
-          type="tel"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-        />
-      </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label style={{ fontWeight: 500 }}>Phone (optional)</Form.Label>
+          <Form.Control
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            style={{ color: "#212529" }}
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3">
-        <Form.Label>Subject</Form.Label>
-        <Form.Control
-          type="text"
-          name="subject"
-          value={formData.subject}
-          onChange={handleChange}
-        />
-      </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label style={{ fontWeight: 500 }}>Subject</Form.Label>
+          <Form.Control
+            type="text"
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
+            style={{ color: "#212529" }}
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3">
-        <Form.Label>Message *</Form.Label>
-        <Form.Control
-          as="textarea"
-          rows={4}
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-        />
-      </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label style={{ fontWeight: 500 }}>Message *</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={4}
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            style={{ color: "#212529" }}
+          />
+        </Form.Group>
 
-      {error && <div className="alert alert-danger">{error}</div>}
-      {success && <div className="alert alert-success">Message sent! We'll get back to you soon.</div>}
+        {error && <div className="alert alert-danger">{error}</div>}
+        {success && <div className="alert alert-success">Message sent! We'll get back to you soon.</div>}
 
-      <Button type="submit" variant="success" disabled={loading}>
-        {loading ? <Spinner animation="border" size="sm" /> : buttonText}
-      </Button>
-    </Form>
+        <Button type="submit" variant="success" disabled={loading}>
+          {loading ? <Spinner animation="border" size="sm" /> : buttonText}
+        </Button>
+      </Form>
+    </div>
   );
 
   if (inline) {
@@ -134,13 +141,13 @@ export default function ContactForm({
 
   return (
     <>
-      <Button variant="primary" onClick={() => setShowModal(true)} className={styles.primaryButton}>
+      <Button variant="success" onClick={() => setShowModal(true)} className="w-100">
         {buttonText}
       </Button>
 
       <Modal show={showModal} onHide={() => setShowModal(false)} centered size="lg">
         <Modal.Header closeButton>
-          <Modal.Title>{modalTitle}</Modal.Title>
+          <Modal.Title style={{ color: "#212529" }}>{modalTitle}</Modal.Title>
         </Modal.Header>
         <Modal.Body>{formContent}</Modal.Body>
       </Modal>
