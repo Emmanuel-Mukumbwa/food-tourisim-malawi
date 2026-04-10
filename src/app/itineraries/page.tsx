@@ -1,3 +1,4 @@
+//src/app/itineraries/page.tsx
 "use client";
 
 import { useMemo, useState } from "react";
@@ -7,19 +8,29 @@ import itineraries from "@/data/itineraries";
 import Link from "next/link";
 import styles from "./ItinerariesPage.module.css";
 
-const filters = ["all", "lake", "food", "hiking", "city"] as const;
-type Filter = (typeof filters)[number];
+// Extract unique categories from the itineraries data
+const allCategories = Array.from(
+  new Set(itineraries.map((it) => it.category).filter(Boolean))
+) as string[];
 
-const filterLabels: Record<Filter, string> = {
-  all: "All",
-  lake: "Lake",
-  food: "Food",
-  hiking: "Hiking",
-  city: "City",
+// Always include "all" first, then the existing categories
+const filters = ["all", ...allCategories];
+
+// Map category keys to human‑readable labels
+const getFilterLabel = (cat: string): string => {
+  const labels: Record<string, string> = {
+    all: "All",
+    hiking: "Hiking",
+    city: "City",
+    cultural: "Cultural",
+    lake: "Lake",
+    food: "Food",
+  };
+  return labels[cat] || cat.charAt(0).toUpperCase() + cat.slice(1);
 };
 
 export default function ItinerariesPage() {
-  const [filter, setFilter] = useState<Filter>("all");
+  const [filter, setFilter] = useState<string>("all");
 
   const filteredItineraries = useMemo(() => {
     if (filter === "all") return itineraries;
@@ -49,7 +60,7 @@ export default function ItinerariesPage() {
               }`}
               aria-pressed={filter === item}
             >
-              {filterLabels[item]}
+              {getFilterLabel(item)}
             </Button>
           ))}
         </div>
