@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, Alert } from "react-bootstrap";
 import ItineraryCard from "@/components/ItineraryCard";
 import itineraries from "@/data/itineraries";
 import Link from "next/link";
@@ -22,7 +22,7 @@ export default function ItinerariesPage() {
 
   const filteredItineraries = useMemo(() => {
     if (filter === "all") return itineraries;
-    return itineraries.filter((it: any) => it.category === filter);
+    return itineraries.filter((it) => it.category === filter);
   }, [filter]);
 
   return (
@@ -53,15 +53,21 @@ export default function ItinerariesPage() {
           ))}
         </div>
 
-        <Row className="g-4">
-          {filteredItineraries.map((it: any) => (
-            <Col key={it.slug} xs={12} md={6} lg={4}>
-              <div className={styles.cardWrap}>
-                <ItineraryCard itinerary={it} />
-              </div>
-            </Col>
-          ))}
-        </Row>
+        {filteredItineraries.length === 0 ? (
+          <Alert variant="light" className={styles.emptyState}>
+            No itineraries found for this filter.
+          </Alert>
+        ) : (
+          <Row className="g-4">
+            {filteredItineraries.map((it) => (
+              <Col key={it.slug} xs={12} md={6} lg={4}>
+                <div className={styles.cardWrap}>
+                  <ItineraryCard itinerary={it} />
+                </div>
+              </Col>
+            ))}
+          </Row>
+        )}
 
         <div className="text-center mt-5">
           <Link href="/destinations" className={styles.outlineButton}>
