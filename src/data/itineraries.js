@@ -39,7 +39,7 @@ const itineraries = [
   },
   {
     slug: "kanin-gina-kavuzi-falls-hike",
-    title: "Kanin'ina Mountain & Kavuzi Falls Hike",
+    title: "Kaning'ina Mountain & Kavuzi Falls Hike",
     durationDays: 1,
     category: "hiking",
     priceRange: "USD 50 - 95",
@@ -49,7 +49,7 @@ const itineraries = [
       "Cold drink and braai break",
     ],
     description:
-      "A full day hike that starts with a climb up Kanin'ina Mountain and ends with a relaxed drive to Kavuzi Falls. Unwind with a cold drink and a bite from the braai after the hike.",
+      "A full day hike that starts with a climb up Kaning'ina Mountain and ends with a relaxed drive to Kavuzi Falls. Unwind with a cold drink and a bite from the braai after the hike.",
     itineraryDays: [
       {
         day: 1,
