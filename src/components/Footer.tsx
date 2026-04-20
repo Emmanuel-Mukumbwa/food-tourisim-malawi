@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="row gy-3">
           <div className="col-md-6 text-center text-md-start">
             <h5 className="mb-2" style={{ color: "#d2691e" }}>
-              Malawi Food & Travel
+              Malo Athu
             </h5>
             <p className="small text-white-50 mb-0">
               Discover authentic culinary experiences and breathtaking destinations across Malawi.
@@ -47,7 +47,7 @@ export default function Footer() {
 
         <hr className="my-3 bg-white-50" />
         <div className="text-center small text-white-50">
-          &copy; {new Date().getFullYear()} Malawi Food & Travel. All rights reserved.
+          &copy; {new Date().getFullYear()} Malo Athu. All rights reserved.
         </div>
       </div>
     </footer>
