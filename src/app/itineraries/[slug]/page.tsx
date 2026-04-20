@@ -186,4 +186,4 @@ export default async function ItineraryDetail({ params }: PageProps) {
       </section>
     </Container>
   );
-}
+} 
