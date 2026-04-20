@@ -10,14 +10,14 @@ export default function AboutPage() {
       <section className={styles.pageShell}>
         <div className={styles.pageHeader}>
           <span className={styles.eyebrow}>About us</span>
-          <h1 className={styles.title}>About Malawi Food & Travel</h1>
+          <h1 className={styles.title}>About Malo Athu</h1>
           <p className={styles.lead}>
             We celebrate Malawi’s culinary heritage and highlight places worth
             discovering, from food markets to lakeside escapes and cultural sites.
           </p>
         </div>
 
-        <Row className="g-4">
+        <Row className="g-4"> 
           <Col md={6}>
             <Card className={styles.infoCard}>
               <Card.Body>
@@ -63,10 +63,10 @@ export default function AboutPage() {
                 <p className={styles.cardText}>
                   Have a question or planning a trip? Reach out at{" "}
                   <a
-                    href="mailto:info@foodtourismmalawi.com"
+                    href="mailto:info@maloathu.com"
                     className={styles.inlineLink}
                   >
-                    info@foodtourismmalawi.com
+                    info@maloathu.com
                   </a>
                   .
                 </p>
